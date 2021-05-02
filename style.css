@@ -106,11 +106,145 @@ header h1 a {
     height: 100%;
 }
 
+.img1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #192F60;
+    letter-spacing: 0.05em;
+}
+
+.mainview p {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    color: #192F60;
+    justify-content: flex-end;
+    letter-spacing: 0.05em;
+}
+
+a {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #192F60;
+    letter-spacing: 0.05em;
+}
+
+.missonlink {
+    position: relative;
+    height: 70px;
+}
+
+.arrow-under{
+    position: absolute;
+    bottom: 0;
+}
+
+.arrow-under::before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 0px;
+  border-bottom: solid 3px #192F60;
+  border-right: solid 3px #192F60;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 6px;
+  left: -40px;
+  margin-top: -4px;
+}
+
+.arrow-btn1 {
+    position: absolute;
+    right: -4%;
+    bottom: 0;
+}
+
+.ourmisshon-arrow  a{
+    display: flex;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+}
+
+.arrow-right {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.arrow-right::before{
+     content: '';
+    width: 10px;
+    height: 10px;
+    border-top: solid 3px #192F60;
+    border-right: solid 3px #192F60;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    display: block;
+}
 
 .ourMission {
     width: 100%;
+    height: 710px;
+    /*background-color: #d5d6ff;*/
+    background-image: url(img/bg_right.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+}
+.consept {
+    position: absolute;
+    width: 335px;
+    height: 290px;
+    top: 31%;
+    left: 8%;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.consept img{
+    height: 90px;
+}
+
+.consept_text {
+    width: 50vw;
     height: 500px;
-    background-color: #d5d6ff;
+    border: solid 1px #c0c0c0;
+    position: absolute;
+    top: 14%;
+    right: 0;
+    /* margin-left: 50px; */
+    margin-right: 100px;
+    background-color: #FFF;
+}
+
+.consept_text div {
+    padding: 10% 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.consept_text div p {
+    padding: 0 15%;
+    line-height: 40px;
+    margin: 0;
+}
+
+#arrow-position {
+    right: 18px;
 }
 
 .services {
