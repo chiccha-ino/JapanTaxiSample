@@ -14,8 +14,8 @@ li {
 
 
 #wrapper {
-    background-color: #DDD;
-    margin: 0px 30px;
+    background-color: #FFF;
+    margin: 0;
 }
 
 /*------------- header -------------*/
@@ -33,6 +33,7 @@ header {
     box-sizing: border-box;
     padding: 0 47px 0 30px;
     align-content: space-between;
+    z-index: 2;
 }
 
 #headerinfo {
@@ -92,7 +93,7 @@ header h1 a {
 }
 
 .mainview {
-    background-color: #ffd5d5;
+    /*background-color: #ffd5d5;*/
     padding: 0 100px 100px;
     width: auto;
     height: calc(100vh - 190px);
@@ -169,11 +170,14 @@ a {
     bottom: 0;
 }
 
-.ourmisshon-arrow  a{
-    display: flex;
+.ourmission-arrow  a{
+    display: block;
     bottom: 0;
     right: 0;
     align-items: center;
+    /* height: 71%; */
+    float: right;
+    margin-right: 27px;
 }
 
 .arrow-right {
@@ -202,6 +206,7 @@ a {
     background-position: right;
     position: relative;
 }
+
 .consept {
     position: absolute;
     width: 335px;
@@ -226,31 +231,54 @@ a {
     position: absolute;
     top: 14%;
     right: 0;
-    /* margin-left: 50px; */
     margin-right: 100px;
     background-color: #FFF;
 }
 
-.consept_text div {
-    padding: 10% 0;
-    height: 100%;
-    box-sizing: border-box;
+.consept_msg {
+    padding: 100px 0 0 0;
+    height: 350px;
 }
 
-.consept_text div p {
+.consept_msg p {
     padding: 0 15%;
     line-height: 40px;
     margin: 0;
+    height: 350px;
 }
 
-#arrow-position {
-    right: 18px;
+.arrow-btn2 {
+    width: 100%;
+    height: 65px;
+    position: absolute;
+    bottom: 0px;
 }
 
 .services {
     width: 100%;
     height: 500px;
     background-color: #ffd5d5;
+    position: relative;
+}
+
+
+.menutitle {
+    position:absolute;
+    font-size: 50px;
+    font-weight: 400;
+    color: #192F60;
+    letter-spacing: 0.05em;
+    margin: 20px 0 0 0;
+    left: 8%;
+}
+
+.subtitle {
+    position: absolute;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #192F60;
+    left: 8%;
+    top: 75px;
 }
 
 .news {
