@@ -89,7 +89,7 @@ header h1 a {
 
 /*------------- main -------------*/
 .maincontainer {
-    padding-top: 100px;
+    margin-top: 100px;
 }
 
 .mainview {
@@ -256,36 +256,106 @@ a {
 
 .services {
     width: 100%;
-    height: 500px;
-    background-color: #ffd5d5;
+    height: 1000px;
+    /*background-color: #ffd5d5;*/
     position: relative;
 }
 
-
-.menutitle {
-    position:absolute;
-    font-size: 50px;
-    font-weight: 400;
-    color: #192F60;
-    letter-spacing: 0.05em;
-    margin: 20px 0 0 0;
-    left: 8%;
+.services_outer {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1306px;
+    height: 100%;
+    /*background-color: #dcdcdc;*/
 }
 
-.subtitle {
+.menu_title {
+    position: absolute;
+    font-size: 50px;
+    font-weight: 500;
+    color: #192F60;
+    /* letter-spacing: 0.02em; */
+    margin: 20px 0 0 0;
+    left: 50px;
+}
+
+.sub_title {
     position: absolute;
     font-size: 15px;
     font-weight: lighter;
     color: #192F60;
-    left: 8%;
-    top: 75px;
+    left: 50px;
+    top: 95px;
+    margin: 0;
+}
+
+.services_inner {
+    position: absolute;
+    width: calc(100% - 100px);
+    display: flex;
+    top: 150px;
+    left: 50px;
+    flex-wrap: wrap;
+}
+
+.service_box a {
+    display: block;
+    height:100%;
+}
+
+.service_box:after{
+	content:"";
+	display: block;
+	width:0;
+	height:0;
+	padding-bottom:10%;
+	
+}
+
+.service_box {
+    width: calc((100% - 66px)/3);
+    min-width: 260px;
+    margin: 0 20px 20px 0;
+    background-color: #FFF;
+    border: solid 1px #c0c0c0;
+}
+
+.service_img {
+    width: 100%;
+}
+
+.service_box p {
+    margin:25px 0 0 20px;
 }
 
 .news {
     width: 100%;
-    height: 500px;
-    background-color: #d5d6ff;
+    height: 710px;
+    /*background-color: #d5d6ff;*/
+    background-image: url(img/bg_left.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
 }
+
+.news_outer {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1306px;
+    height: 100%;
+}
+
+.news_box {
+    position: absolute;
+    width: calc(100% - 100px);
+    height: 500px;
+    background-color: #FFF;
+    border: solid 1px #c0c0c0;
+    display: flex;
+    top: 110px;
+    left: 50px;
+}
+
 
 .recruit {
     width: 100%;
