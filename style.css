@@ -55,6 +55,10 @@ header {
     align-items: center;
 }
 
+#headerinfo:hover {
+    opacity: 0.8;
+}
+
 #menuwrapper {
     display: flex;
     justify-content: space-between;
@@ -78,13 +82,46 @@ header h1 a {
 
 #headermenu ul {
     display: flex;
+    justify-content: space-around;
+    width: 530px;
     margin: 0;
     padding: 0;
     color: #192F60;
-    font-size: medium;
 }
 #headermenu ul li {
     padding-left: 20px;
+}
+
+#headermenu ul li a {
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    color: #192F60;
+    letter-spacing: 0em;
+    position: relative;
+    transition: 0.3s
+}
+
+#headermenu img {
+    padding-left:5px;
+}
+
+#headermenu ul li a:after {
+    content: '';
+    height: 2px;
+    width: calc(100% - 1px);
+    background: #192f60;
+    position: absolute;
+    left: 1px;
+    bottom: -6px;
+    transform: scale(0, 1);        /*x:y = 0:1  ->幅が実質0*/
+    transform-origin: right top;    /*ホバー外れるとき右上から始動 */
+    transition: transform .3s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#headermenu ul li a:hover:after {
+    transform-origin: left top;     /*ホバー外れるとき左上から始動 */
 }
 
 /*------------- main -------------*/
@@ -94,7 +131,7 @@ header h1 a {
 
 .mainview {
     /*background-color: #ffd5d5;*/
-    padding: 0 100px 100px;
+    padding: 30px 100px 100px 100px;;
     width: auto;
     height: calc(100vh - 190px);
 }
@@ -380,6 +417,7 @@ a {
     font-size: 15px;
     text-align: center;
     line-height: 47px;
+    transition: all 0.5s;
 }
 
 .btn_more a {
@@ -389,17 +427,29 @@ a {
     text-decoration: none;
     color: #192F60;
     height: 100%;
+    transition: all 0.5s;
     /* letter-spacing: 0.05em; */
 }
 
+.btn_more:hover {
+    background-color: #192F60;
+}
+
+.btn_more a:hover {
+    color: #FFF;
+}
+
+
 .arrow-right2 {
     position: absolute;
-    right: 23px;
-    bottom: 20px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .arrow-right2::before{
-     content: '';
+    content: '';
     width: 10px;
     height: 10px;
     border-top: solid 3px #192F60;
@@ -408,6 +458,13 @@ a {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     display: block;
+    margin: 9% 20px 0% auto;
+    transition: all 0.5s;
+}
+
+.arrow-right2:hover:before{
+    border-top: solid 3px #FFF;
+    border-right: solid 3px #FFF;
 }
 
 .news_right {
@@ -430,6 +487,8 @@ a {
 .news_link a {
     display: block;
 }
+
+
 
 .news_link dt {
     display: inline-block;
@@ -466,6 +525,10 @@ a {
     font-weight: normal;
     font-size: 14px;
     margin: 15px 0 0 0;
+}
+
+.news_link:hover dd{
+    text-decoration: underline;
 }
 
 .recruit {
@@ -555,13 +618,19 @@ a {
     background-size: cover;
     background-image: url(img/pic_labo.jpg);
 }
+.andon_labo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* position: relative; */
+}
 
 .andon_labo a img {
     position: absolute;
     display: block;
     right: 0;
     bottom: 0;
-    padding: calc(100% - 56px) 40px 40px calc(100% - 52px);
+    padding: 0 40px 40px 0;
 }
 
 
@@ -631,34 +700,41 @@ a {
     position: relative;
 }
 
-/*.footer_box dt a::after {*/
-/*  position: absolute;*/
-/*  bottom: 2px;*/
-/*  left: 0;*/
-/*  content: '';*/
-/*  width: 100%;*/
-/*  height: 2px;*/
-/*  background: #FFF;*/
-/*  opacity: 0;*/
-/*  visibility: hidden;*/
-/*  transition: .3s;*/
-/*}*/
+.footer_box dt a span {
+	transition: all 0.3s ease;
+	border-bottom: 1px solid #FFF0;
+}
 
-/*.footer_box dt a:hover::after {*/
-/*  bottom: 0;*/
-/*  opacity: 1;*/
-/*  visibility: visible;*/
-/*}*/
+.footer_box dt a span:hover {
+	width: 100%;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #FFF;
+}
+
 
 .footer_box dd {
-    margin: 0;
-    padding: 10px 0;
+    margin: 7px 0;
+    padding: 4px 0;
 }
 
 .footer_box dd a {
     color: #FFF;
     font-size: 13px;
     font-weight: normal;
+    transition-duration: 1s;
+    transition-property: border-bottom;
+    display:block;
+}
+
+.footer_box dd a span {
+	transition: all 0.3s ease;
+	border-bottom: 1px solid #FFF0;
+}
+
+.footer_box dd a span:hover {
+	width: 100%;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #FFF;
 }
 
 .footerlink_outer {
@@ -705,7 +781,6 @@ footer {
 }
 
 .footerporicy {
-    height: 100%;
     width: 300px;
     display: flex;
     align-items: center;
@@ -717,6 +792,19 @@ footer {
     font-weight: normal;
     letter-spacing: initial;
 }
+
+.footerporicy a span {
+	transition: all 0.3s ease;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #192f6000;
+}
+
+.footerporicy a span:hover {
+	width: 100%;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #192F60;
+}
+
 
 .footercopyright {
     width: 200px;
