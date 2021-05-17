@@ -122,6 +122,7 @@ header h1 a {
 
 #headermenu ul li a:hover:after {
     transform-origin: left top;     /*ホバー外れるとき左上から始動 */
+    transform: scale(1, 1);
 }
 
 /*------------- main -------------*/
@@ -139,9 +140,45 @@ header h1 a {
 .mainimage {
 	margin: auto;
     background-color: white;
-    /* position: relative; */
+    overflow: hidden;
+     position: relative; 
     width: 100%;
     height: 100%;
+}
+
+.mainimage img {
+    display    : block;
+    position   : absolute;
+    width      : inherit;
+    height     : inherit;
+    animation: photo 20s infinite;
+    opacity: 0;
+    object-fit: cover;
+}
+
+.mainimage img:nth-of-type(1) { animation-delay: 0s }
+.mainimage img:nth-of-type(2) { animation-delay: 5s }
+.mainimage img:nth-of-type(3) { animation-delay: 10s }
+.mainimage img:nth-of-type(4) { animation-delay: 15s }
+
+@keyframes photo{
+  0%{ opacity: 0;}
+  15%{ opacity: 1;}
+  85%{ opacity: 1;}
+  100%{ opacity: 0;}
+}
+
+.photos img:nth-of-type(1) {
+    animation-delay: 0s;
+}
+.photos img:nth-of-type(2) {
+    animation-delay: 4s;
+}
+.photos img:nth-of-type(3) {
+    animation-delay: 8s;
+}
+.photos img:nth-of-type(4) {
+    animation-delay: 12s;
 }
 
 .img1 {
@@ -294,7 +331,6 @@ a {
 .services {
     width: 100%;
     height: 1000px;
-    /*background-color: #ffd5d5;*/
     position: relative;
 }
 
@@ -303,7 +339,6 @@ a {
     margin: 0 auto;
     max-width: 1306px;
     height: 100%;
-    /*background-color: #dcdcdc;*/
 }
 
 .menu_title {
@@ -311,7 +346,6 @@ a {
     font-size: 50px;
     font-weight: 500;
     color: #192F60;
-    /* letter-spacing: 0.02em; */
     margin: 20px 0 0 0;
     left: 50px;
 }
@@ -334,6 +368,19 @@ a {
     left: 50px;
     flex-wrap: wrap;
 }
+.service_box {
+    width: calc((100% - 66px)/3);
+    min-width: 260px;
+    margin: 0 20px 20px 0;
+    background-color: #FFF;
+    border: solid 1px #c0c0c0;
+    transition: all 0.3s ease;
+}
+
+.service_box:hover {
+    transform: translate(-1px, -5px);
+    box-shadow: 3px 3px 10px #aaaaaa5e;
+}
 
 .service_box a {
     display: block;
@@ -347,14 +394,6 @@ a {
 	height:0;
 	padding-bottom:10%;
 	
-}
-
-.service_box {
-    width: calc((100% - 66px)/3);
-    min-width: 260px;
-    margin: 0 20px 20px 0;
-    background-color: #FFF;
-    border: solid 1px #c0c0c0;
 }
 
 .service_img {
@@ -762,16 +801,36 @@ a {
 }
 
 .footerlink a {
+    z-index: 1;
     color: #FFF;
     width: 100%;
     height: 100%;
     text-align: center;
     line-height: 230px;
+    position:relative;
 }
 
 .footerlink a img {
     margin-left: 10px;
 }
+
+.footerlink:after {
+    content: '';
+    height: 100%;
+    width: 50%;
+    background: #25407A;
+    position: absolute;
+    transform: scale(0, 1);        /*x:y = 0:1  ->幅が実質0*/
+    transform-origin: right top;    /*ホバー外れるとき右上から始動 */
+    transition: transform .3s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.footerlink:hover:after {
+    transform-origin: left top;     /*ホバー外れるとき左上から始動 */
+    transform: scale(1, 1);
+}
+
 
 footer {
     height: 175px;
