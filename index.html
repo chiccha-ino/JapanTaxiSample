@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicons.png">
     <title>JapanTaxi株式会社</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -16,6 +18,23 @@
             <div id="menuwrapper">
                 <h1><a href="index.html"><img src="img/logo_navy.svg"></a></h1>
                 <div id="headermenu">
+                    <ul>
+                        <li><a href="#">Company</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Recruit</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog<img src="img/icon_blank_navy.svg"></a></li>
+                    </ul>
+                </div>
+                <div id="hamburger">
+                    <div class="icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="headermenu_sp">
                     <ul>
                         <li><a href="#">Company</a></li>
                         <li><a href="#">Services</a></li>
@@ -212,5 +231,13 @@
             </div>
         </footer>
     </div>
+    <!--</body>の直前にjQueryのコード-->
+    <script>
+    /* global $*/
+        $('#hamburger').on('click', function(){
+            $('.icon').toggleClass('close');
+            $('.headermenu_sp').slideToggle();
+        });
+    </script>
 </body>
 </html>
