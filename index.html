@@ -34,6 +34,7 @@
                         <span></span>
                     </div>
                 </div>
+                <div id="close-box"></div>
                 <div class="headermenu_sp">
                     <ul>
                         <li><a href="#">Company</a></li>
@@ -235,6 +236,10 @@
     <script>
     /* global $*/
         $('#hamburger').on('click', function(){
+            $('.icon').toggleClass('close');
+            $('.headermenu_sp').slideToggle();
+        });
+        $('#close-box').on('click', function(){
             $('.icon').toggleClass('close');
             $('.headermenu_sp').slideToggle();
         });

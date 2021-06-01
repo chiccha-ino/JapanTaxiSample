@@ -123,6 +123,9 @@ header h1 a {
     transform-origin: left top;     /*ホバー外れるとき左上から始動 */
     transform: scale(1, 1);
 }
+#close-box {
+    display: none;
+}
 
 .headermenu_sp {
     display: none;
@@ -938,6 +941,17 @@ footer {
         transform: rotate(-45deg);
         top: 28px;
     }
+    #close-box {
+        position: absolute;
+        display: block;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        z-index: 10;
+        left: 0;
+        background-color: #fff0;
+    }
+    
     
     .headermenu_sp {
         top: 60px;
